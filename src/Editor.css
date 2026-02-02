@@ -135,11 +135,17 @@
 /* HTML Test Buttons */
 .html-test-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 16px;
   padding: 16px;
   border-top: 1px solid #eee;
   background: #f9f9f9;
+}
+
+.html-buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .html-btn {
@@ -211,4 +217,51 @@
 .editor-image:hover {
   outline: 2px solid #1976d2;
   outline-offset: 2px;
+}
+
+/* HTML Input Section */
+.html-input-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.html-input-section h4 {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.html-input-textarea {
+  width: 100%;
+  padding: 12px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 13px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  resize: vertical;
+  min-height: 120px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.html-input-textarea:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.html-input-textarea::placeholder {
+  color: #999;
+}
+
+.render-btn {
+  background: #ff9800;
+  color: white;
+  align-self: flex-start;
+}
+
+.render-btn:hover {
+  background: #f57c00;
 }

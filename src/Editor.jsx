@@ -128,6 +128,7 @@ function HtmlSerializationPlugin({ onHtmlChange }) {
 function HtmlTestButtons() {
   const [editor] = useLexicalComposerContext()
   const [htmlOutput, setHtmlOutput] = useState('')
+  const [htmlInput, setHtmlInput] = useState('')
 
   const handleExport = () => {
     editor.getEditorState().read(() => {
@@ -171,14 +172,53 @@ function HtmlTestButtons() {
     console.log('================================')
   }
 
+  const handleRenderHtml = () => {
+    if (!htmlInput.trim()) {
+      alert('Please enter some HTML to render')
+      return
+    }
+
+    editor.update(() => {
+      const parser = new DOMParser()
+      const dom = parser.parseFromString(htmlInput, 'text/html')
+      const nodes = $generateNodesFromDOM(editor, dom)
+
+      const root = $getRoot()
+      root.clear()
+      root.select()
+      $insertNodes(nodes)
+    })
+
+    console.log('=== RENDERED CUSTOM HTML ===')
+    console.log(htmlInput)
+    console.log('============================')
+  }
+
   return (
     <div className="html-test-buttons">
-      <button onClick={handleExport} className="html-btn export-btn">
-        Export to HTML (Console)
-      </button>
-      <button onClick={handleImport} className="html-btn import-btn">
-        Import Sample HTML
-      </button>
+      <div className="html-buttons-row">
+        <button onClick={handleExport} className="html-btn export-btn">
+          Export to HTML (Console)
+        </button>
+        <button onClick={handleImport} className="html-btn import-btn">
+          Import Sample HTML
+        </button>
+      </div>
+
+      <div className="html-input-section">
+        <h4>Enter HTML to Render:</h4>
+        <textarea
+          className="html-input-textarea"
+          value={htmlInput}
+          onChange={(e) => setHtmlInput(e.target.value)}
+          placeholder="<p>Enter your <strong>HTML</strong> here...</p>"
+          rows={6}
+        />
+        <button onClick={handleRenderHtml} className="html-btn render-btn">
+          Render HTML
+        </button>
+      </div>
+
       {htmlOutput && (
         <div className="html-output">
           <h4>Exported HTML:</h4>
