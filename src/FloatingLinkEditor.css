@@ -1,0 +1,86 @@
+.floating-link-editor {
+  position: absolute;
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.link-view,
+.link-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link-label {
+  color: #666;
+  white-space: nowrap;
+}
+
+.link-url {
+  color: #1976d2;
+  text-decoration: none;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-url:hover {
+  text-decoration: underline;
+}
+
+.link-input {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 200px;
+  outline: none;
+}
+
+.link-input:focus {
+  border-color: #1976d2;
+}
+
+.link-action {
+  background: transparent;
+  border: none;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.link-action:hover {
+  text-decoration: underline;
+}
+
+.link-remove {
+  color: #d32f2f;
+}
+
+.link-divider {
+  color: #ddd;
+}
+
+.link-save {
+  background: transparent;
+  border: none;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  font-weight: 500;
+}
+
+.link-save:hover {
+  text-decoration: underline;
+}
