@@ -48,6 +48,7 @@ Registered nodes in `Editor.jsx`:
 - `HeadingNode` - h1-h4 headings
 - `ListNode` / `ListItemNode` - ordered/unordered lists
 - `LinkNode` - hyperlinks
+- `ImageNode` - custom node for images (src/nodes/ImageNode.jsx)
 
 ### Toolbar Features
 
@@ -56,6 +57,14 @@ Registered nodes in `Editor.jsx`:
 - **Text color**: 50-color Material Design palette
 - **Lists**: Ordered and unordered
 - **Links**: Insert/edit via floating editor
+
+### HTML Test Controls
+
+The editor includes test controls for HTML operations:
+- **Export to HTML** - Converts editor content to HTML string
+- **Import Sample HTML** - Loads predefined sample content
+- **HTML Input Textarea** - Enter custom HTML code
+- **Render HTML** - Renders custom HTML into the editor
 
 ### CSS Organization
 

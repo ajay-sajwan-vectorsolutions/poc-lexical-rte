@@ -100,6 +100,36 @@ editor.update(() => {
 2. **Node Registration**: Only HTML elements with registered nodes will be properly converted
 3. **Unsupported Elements**: HTML elements without corresponding nodes are either ignored or converted to plain text
 
+### UI Test Controls
+
+The editor includes built-in test controls for HTML operations:
+
+| Control | Description |
+|---------|-------------|
+| **Export to HTML** | Converts editor content to HTML and displays it |
+| **Import Sample HTML** | Loads predefined sample HTML with various elements |
+| **HTML Input Textarea** | Text area for entering custom HTML code |
+| **Render HTML** | Parses and renders the custom HTML into the editor |
+
+**Custom HTML Rendering Example:**
+
+```javascript
+const handleRenderHtml = () => {
+  const htmlInput = '<h1>Custom Title</h1><p>Your <strong>HTML</strong> here</p>'
+
+  editor.update(() => {
+    const parser = new DOMParser()
+    const dom = parser.parseFromString(htmlInput, 'text/html')
+    const nodes = $generateNodesFromDOM(editor, dom)
+
+    const root = $getRoot()
+    root.clear()
+    root.select()
+    $insertNodes(nodes)
+  })
+}
+```
+
 ---
 
 ## Node System

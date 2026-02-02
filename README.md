@@ -11,6 +11,7 @@ A modern rich text editor built with React and Lexical framework, featuring HTML
 - **Images** - Full image support with custom ImageNode
 - **Text Color** - 50-color Material Design palette
 - **HTML Import/Export** - Convert content to/from HTML for API storage
+- **Custom HTML Rendering** - Enter and render custom HTML directly in the editor
 - **Undo/Redo** - Full history support
 
 ## Tech Stack
@@ -85,9 +86,11 @@ editor.update(() => {
 
 ### Testing HTML Features
 
-The editor includes test buttons:
+The editor includes test controls:
 - **Export to HTML** - Outputs HTML to console and displays below
 - **Import Sample HTML** - Loads sample content with text, lists, links, and images
+- **HTML Input Textarea** - Enter custom HTML code
+- **Render HTML** - Renders the custom HTML from textarea into the editor
 
 ## Supported HTML Elements
 
